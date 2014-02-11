@@ -4295,42 +4295,14 @@ address {
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-  color: #333333;
-  background-color: #25647f;
-  *background-color: #1f546c;
+  background-color: #1d8b4c;
+  *background-color: #156e3b;
 }
 .btn:active,
 .btn.active {
   background-color: #194558 \9;
 }
-.btn:hover,
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn.disabled,
-.btn[disabled] {
-  color: #333333;
-  background-color: #25647f;
-  *background-color: #1f546c;
-}
-.btn:active,
-.btn.active {
-  background-color: #194558 \9;
-}
-.btn:hover,
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn.disabled,
-.btn[disabled] {
-  color: #333333;
-  background-color: #25647f;
-  *background-color: #1f546c;
-}
-.btn:active,
-.btn.active {
-  background-color: #194558 \9;
-}
+
 .btn:first-child {
   *margin-left: 0;
 }
@@ -4342,7 +4314,7 @@ address {
 }
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  color: #FFF;
   text-decoration: none;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
@@ -10582,7 +10554,7 @@ ul {
   -o-transition: background 0.6s;
   transition: background 0.6s;
 }
-.btn:hover,
+
 .btn-navbar:hover {
   background: #25647f;
   color: #fff;
