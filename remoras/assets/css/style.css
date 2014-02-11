@@ -10478,6 +10478,9 @@ ul {
   text-align: left;
   margin: 0 10px;
 }
+.features li img {
+  margin: 0 15px 0 0;
+}
 .features li i {
   color: #27ae60;
   font-size: 32px;
@@ -10492,11 +10495,15 @@ ul {
   height: 50px;
   margin: 10px;
 }
+.big-list li img {
+  margin: 0 15px 0 0;
+}
 .big-list i {
   float: left;
   width: 50px;
   font-size: 40px;
-  margin-right: 20px;
+  margin-right: 25px;
+  text-align: right;
 }
 .list-wide li {
   padding: 5px 0;
