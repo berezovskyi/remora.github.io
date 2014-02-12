@@ -9,8 +9,6 @@ try {
     die(var_dump($e));
 }
 
-print_r( $_POST );
-
 if(!empty($_POST)) { 
     try {
         $email = $_POST['EMAIL'];
