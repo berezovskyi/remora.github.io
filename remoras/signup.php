@@ -5,18 +5,16 @@ include 'databaseAdapter.php';
 $database = mysqli_connect( $db_hostname, $db_username, $db_password, $db_dbname );
 
 if ( mysqli_connect_errno() ){
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  echo "Failed to connect to database: " . mysqli_connect_error();
 }
 
-mysqli_query($database,"INSERT INTO Persons (FirstName, LastName, Age)
-VALUES ('Peter', 'Griffin',35)");
+$user_email = mysql_real_escape_string( $_POST["email"] );
 
-mysqli_query($database,"INSERT INTO Persons (FirstName, LastName, Age) 
-VALUES ('Glenn', 'Quagmire',33)");
+mysqli_query($database, "INSERT INTO $db_table_newsletter (email)
+VALUES ( $user_email )");
 
 mysqli_close($database);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
