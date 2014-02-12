@@ -1,3 +1,23 @@
+<?php
+
+include 'databaseAdapter.php';
+
+$database = mysqli_connect( $db_hostname, $db_username, $db_password, $db_dbname );
+
+if ( mysqli_connect_errno() ){
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+mysqli_query($database,"INSERT INTO Persons (FirstName, LastName, Age)
+VALUES ('Peter', 'Griffin',35)");
+
+mysqli_query($database,"INSERT INTO Persons (FirstName, LastName, Age) 
+VALUES ('Glenn', 'Quagmire',33)");
+
+mysqli_close($database);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -96,14 +116,12 @@
           <div class="span4">
             <h4><strong>Get in touch!</strong> Sign up and we'll keep you updated</h4>
           </div>
-          <form action="signup.php" method="post">
-            <div class="span6">
-              <input type="email" placeholder="your@e-mail.com" name="EMAIL" class="subscribe">
-            </div>
-            <div class="span2">
-              <button type="submit"  class="btn pull-right subscribe">Subscribe</button>
-            </div>
-          </form>
+          <div class="span6">
+            <input type="email" placeholder="your@e-mail.com" name="EMAIL" class="subscribe">
+          </div>
+          <div class="span2">
+            <button type="submit"  class="btn pull-right subscribe">Subscribe</button>
+          </div>
         </div>
       </div>
 
@@ -237,14 +255,12 @@
           <div class="span4">
             <h4><strong>Get in touch!</strong> Sign up and we'll keep you updated</h4>
           </div>
-          <form action="signup.php" method="post">
-            <div class="span6">
-              <input type="email" placeholder="your@e-mail.com" name="EMAIL" class="subscribe">
-            </div>
-            <div class="span2">
-              <button type="submit"  class="btn pull-right subscribe">Subscribe</button>
-            </div>
-          </form>
+          <div class="span6">
+            <input type="email" placeholder="your@e-mail.com" name="EMAIL" class="subscribe">
+          </div>
+          <div class="span2">
+            <button type="submit"  class="btn pull-right subscribe">Subscribe</button>
+          </div>
         </div>
       </div>
 
