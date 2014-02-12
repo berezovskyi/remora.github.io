@@ -2,18 +2,32 @@
 
 include 'databaseAdapter.php';
 
-$database = mysqli_connect( $db_hostname, $db_username, $db_password, $db_dbname );
-
-if ( mysqli_connect_errno() ){
-  echo "Failed to connect to database: " . mysqli_connect_error();
+try {
+    $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+} catch(Exception $e){
+    die(var_dump($e));
 }
 
-$user_email = mysql_real_escape_string( $_POST["email"] );
+print_r( $_POST );
 
-mysqli_query($database, "INSERT INTO $db_table_newsletter (email)
-VALUES ( $user_email )");
+if(!empty($_POST)) { 
+    try {
+        $email = $_POST['EMAIL'];
+        $date = date("Y-m-d");
 
-mysqli_close($database);
+        $sql_insert = "INSERT INTO remora_newsletter (email, date) 
+                   VALUES (?,?)";
+        $stmt = $conn->prepare($sql_insert);
+        $stmt->bindValue(1, $email);
+        $stmt->bindValue(2, $date);
+        $stmt->execute();
+    }
+    catch(Exception $e) {
+        die(var_dump($e));
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -86,95 +100,17 @@ mysqli_close($database);
       <!-- Home Page -->
       <div id="home" class="page color-1">
         <div class="inner-page">
-          <h2 class="page-headline large"><strong>The Elastic Office</strong> - work in the best offices in the world</h2>
+          <h2 class="page-headline large"><strong>Thank for you interest!</strong></h2>
         </div>  
-        <div class="row-fluid inner-page">
-          <div class="span8 pull-right lazy-container">
-            <img class="lazy" alt="Looks great on every device" src="assets/img/pixel.png" data-original="assets/img/key-visual.png"/>
-          </div>
-          <div class="span4 pull-right">
-            <ul class="big-list">
-              <!--<li><i class="icon-ok"></i> Flexible office</li>
-              <li><i class="icon-tablet"></i> Best locations</li>
-              <li><i class="icon-cloud"></i> Lorem Ipsum</li>
-              <li><i class="icon-cog"></i> Lorem Ipsum</li>-->
-              <li><i class="icon-map-marker"></i> Best locations</li>
-              <li><i class="icon-time"></i> Save time</li>
-              <li><i class="icon-money"></i> Save money</li>
-            </ul>
-            <br />
-            <a href="#newsletter" title="Sign up now!" class="scroll btn btn-centered"><i class="icon-caret-down"></i> Sign up</a>
-          </div>
-        </div>
       </div>
 
-      <!-- Newsletter -->
-      <div id="newsletter" class="newsletter color-2">
-        <div class="inner-page row-fluid">
-          <div class="span4">
-            <h4><strong>Get in touch!</strong> Sign up and we'll keep you updated</h4>
-          </div>
-          <div class="span6">
-            <input type="email" placeholder="your@e-mail.com" name="EMAIL" class="subscribe">
-          </div>
-          <div class="span2">
-            <button type="submit"  class="btn pull-right subscribe">Subscribe</button>
-          </div>
-        </div>
-      </div>
-
+      
       <!-- Features -->
       <div id="features" class="page color-4">
         <div class="inner-page">
-          <h2 class="page-headline">Why bother searching for your own office?</h2>
+          <h2 class="page-headline">One more thing...</h2>
         </div>
-
-        <div class="inner-page row-fluid">
-          <ul class="features list-inline">
-            <li>
-              <h3><img src="assets/img/icon-location.png" alt="" width="45"/> Best locations</h3>
-              <p>We partnered up with several technology companies which are located at prime locations throughout Stockholm.</p>
-            </li>
-            <li>
-              <h3><img src="assets/img/icon-clock.png" alt="" width="45"/> Save time</h3>
-              <p>Never spend days searching for a new office again. When you sign up with us, you can browse hundreds of available desks inside our partner companies.</p>
-            </li>
-            <li>
-              <h3><img src="assets/img/icon-money.png" alt="" width="45"/> Save money</h3>
-              <p>Instead of renting a whole office for an extended period, you can rent a desk for a day, a week or a month. No minimum contract duration.</p>
-            </li>
-            </ul>
-        </div>
-                         
-        <div class="row-fluid inner-page">
-          <div class="span6 lazy-container">
-            <img class="figurette lazy" src="assets/img/pixel.png" data-original="assets/img/office-2.jpg" alt="Our workspace" />
-          </div>
-          <div class="span6">           
-            <h3>Work in the coolest offices of Stockholm</h3>
-            <p class="lead">Our partner companies are looking for talented people all the time</p>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>  
-          </div>
-        </div>
-
-        <hr>
-
-
-      <!-- About page -->
-      <div id="about" class="page color-4">
-        <div class="inner-page">
-          <h2 class="page-headline">Traditional workplaces do not fit the flexible and mobile workforce of today</h2>
-        </div>
-        <div class="row-fluid inner-page">
-          <div class="span6  lazy-container">
-              <img class="figurette lazy" src="assets/img/pixel.png" data-original="assets/img/office.jpg" alt="Our workspace" />
-          </div>
-          <div class="span6">
-            <h3>Why remora is the better choice</h3>
-            <p class="lead">It's not just about the desk – it's about exchanging ideas and knowledge as well!</p>
-            <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-          </div>
-        </div>
+      </div>
 
         <hr>
 
@@ -253,12 +189,14 @@ mysqli_close($database);
           <div class="span4">
             <h4><strong>Get in touch!</strong> Sign up and we'll keep you updated</h4>
           </div>
-          <div class="span6">
-            <input type="email" placeholder="your@e-mail.com" name="EMAIL" class="subscribe">
-          </div>
-          <div class="span2">
-            <button type="submit"  class="btn pull-right subscribe">Subscribe</button>
-          </div>
+          <form action="signup.php" method="post">
+            <div class="span6">
+              <input type="email" placeholder="your@e-mail.com" name="EMAIL" class="subscribe">
+            </div>
+            <div class="span2">
+              <button type="submit"  class="btn pull-right subscribe">Subscribe</button>
+            </div>
+          </form>
         </div>
       </div>
 
