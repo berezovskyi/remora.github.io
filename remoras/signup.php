@@ -11,7 +11,7 @@ try {
 
 if(!empty($_POST)) { 
     try {
-        $email = $_POST['EMAIL'];
+        $email = $_POST['email'];
         $date = date("Y-m-d");
 
         $sql_insert = "INSERT INTO remora_newsletter (email, date) 
