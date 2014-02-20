@@ -120,7 +120,7 @@ if(!empty($_POST)) {
             <h4>Andrew Berezovskiy</h4>
             <p>Kiev, Ukraine</p>
             <ul>
-              <li><a href="mailto:andrew@remora.eu"><i class="icon-envelope-alt"></i>&nbsp;andrew@remora.eu</a></li>
+              <li><a href="mailto:andriib@kth.se"><i class="icon-envelope-alt"></i>&nbsp;andriib@kth.se</a></li>
             </ul>
           </div>
           <div class="span6 team2">
@@ -128,7 +128,7 @@ if(!empty($_POST)) {
             <h4>Hendrik Heuer</h4>
             <p>Bremen, Germany</p>
             <ul>
-              <li><a href="mailto:hendrik@remora.eu"><i class="icon-envelope-alt"></i>&nbsp;hendrik@remora.eu</a></li>
+              <li><a href="mailto:hendrikh@kth.se"><i class="icon-envelope-alt"></i>&nbsp;hendrikh@kth.se</a></li>
             </ul>
           </div>
           <div class="span6">
@@ -136,7 +136,7 @@ if(!empty($_POST)) {
             <h4>Irene Kolomvrezou</h4>
             <p>Athens, Greece</p>
             <ul>
-              <li><a href="mailto:irene@remora.eu"><i class="icon-envelope-alt"></i>&nbsp;irene@remora.eu</a></li>
+              <li><a href="mailto:eirinik@kth.se"><i class="icon-envelope-alt"></i>&nbsp;eirinik@kth.se</a></li>
             </ul>
           </div>
           <div class="span6 team2">
@@ -144,7 +144,7 @@ if(!empty($_POST)) {
             <h4>Simon Kreiser</h4>
             <p>Cologne, Germany</p>
             <ul>
-              <li><a href="mailto:simon@remora.eu"><i class="icon-envelope-alt"></i>&nbsp;simon@remora.eu</a></li>
+              <li><a href="mailto:kreiser@kth.se"><i class="icon-envelope-alt"></i>&nbsp;kreiser@kth.se</a></li>
             </ul>
           </div>
           <div class="span6">
@@ -152,7 +152,7 @@ if(!empty($_POST)) {
             <h4>Shaun Mulligan</h4>
             <p>Cape Town, South Africa</p>
             <ul>
-              <li><a href="shaun@remora.eu"><i class="icon-envelope-alt"></i>&nbsp;shaun@remora.eu</a></li>
+              <li><a href="shaunmu@kth.se"><i class="icon-envelope-alt"></i>&nbsp;shaunmu@kth.se</a></li>
             </ul>
           </div>
         </div>
