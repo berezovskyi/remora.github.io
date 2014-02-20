@@ -104,16 +104,110 @@ if(!empty($_POST)) {
 
       
       <!-- Features -->
-      <div id="features" class="page color-4">
-        <div class="inner-page">
-          <h2 class="page-headline">One more thing...</h2>
-        </div>
-      </div>
+      <div class="page color-4" id="features">
+        <div class="row-fluid inner-page">
+            <div class="ss-form span10 offset1">
+                <h2 class="page-headline">One more thing...</h2><iframe id="hidden_iframe" name="hidden_iframe" style=
+                "display:none;"></iframe>
 
+                <form action=
+                "https://docs.google.com/forms/d/1UzQhr8VgCO33Fwd6crEMoQik44uqGwo26vE7HZqpV_k/formResponse" id=
+                "ss-form" method="post" name="ss-form" onsubmit="" target="hidden_iframe">
+                    <div>
+                        <div class="ss-form-question errorbox-good">
+                            <div class="ss-item jfk-scrollbar ss-text" dir="ltr">
+                                <div class="ss-form-entry">
+                                    <div class="ss-q-title">
+                                        <label class="ss-q-item-label" for="entry_992191512">How many desks do you plan
+                                        to rent?</label>
+                                    </div>
+
+                                    <div class="ss-q-help ss-secondary-text" dir="ltr"></div><input class="ss-q-short"
+                                    dir="auto" id="entry_992191512" name="entry.992191512" title="" type="text" value=
+                                    "">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ss-form-question errorbox-good">
+                            <div class="ss-item jfk-scrollbar ss-radio" dir="ltr">
+                                <div class="ss-form-entry">
+                                    <div class="ss-q-title">
+                                        <label class="ss-q-item-label" for="entry_792516650">Do you have a location
+                                        preference (e.g. close to home or city center)?</label>
+                                    </div>
+
+                                    <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+
+                                    <ul class="ss-choices">
+                                        <li class="ss-choice-item"><label><span class=
+                                        "ss-choice-item-control goog-inline-block"><input class="ss-q-radio" id=
+                                        "group_788711083_1" name="entry.788711083" type="radio" value="Yes"></span>
+                                        <span class="ss-choice-label">Yes</span></label></li>
+
+                                        <li class="ss-choice-item"><label><span class=
+                                        "ss-choice-item-control goog-inline-block"><input class="ss-q-radio" id=
+                                        "group_788711083_2" name="entry.788711083" type="radio" value="No"></span>
+                                        <span class="ss-choice-label">No</span></label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ss-form-question errorbox-good">
+                            <div class="ss-item jfk-scrollbar ss-radio" dir="ltr">
+                                <div class="ss-form-entry">
+                                    <div class="ss-q-title">
+                                        <label class="ss-q-item-label" for="entry_626456431">Would you like us to
+                                        contact you with our current offers?</label>
+                                    </div>
+
+                                    <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+
+                                    <ul class="ss-choices">
+                                        <li class="ss-choice-item"><label><span class=
+                                        "ss-choice-item-control goog-inline-block"><input class="ss-q-radio" id=
+                                        "group_1125543304_1" name="entry.1125543304" type="radio" value="Yes"></span>
+                                        <span class="ss-choice-label">Yes</span></label></li>
+
+                                        <li class="ss-choice-item"><label><span class=
+                                        "ss-choice-item-control goog-inline-block"><input class="ss-q-radio" id=
+                                        "group_1125543304_2" name="entry.1125543304" type="radio" value=
+                                        "Not now"></span> <span class="ss-choice-label">Not now</span></label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><input name="draftResponse" type="hidden" value="[,,&quot;8083827477318982311&quot;] ">
+                        <input name="pageHistory" type="hidden" value="0"> <input name="fromEmail" type="hidden" value=
+                        "false"> <input name="fbzx" type="hidden" value="8083827477318982311">
+
+                        <div class="ss-item ss-navigate">
+                            <table id="navigation-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="ss-form-entry goog-inline-block" dir="ltr" id="navigation-buttons">
+                                        <input id="ss-submit" name="submit" type="submit" value="Submit"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="thanks" style="display: none;" class="row-fluid inner-page">
+                <div class="span10">
+                  <h2>Thank you for your feedback.</h2>
+
+                  <p>If you want to know more, feel free to drop any of us a line using the addresses listed below.</p>
+                </div>
+            </div>
+          </div>
+        </div>
         <hr>
 
         <!-- Team -->
-        <div id="team" class="row-fluid inner-page team">
+        <div id="team" class="row-fluid inner-page team color-4">
           <h2 class="page-headline">remora was founded out of our own desire for a more flexible workspace</h2>
           <div class="span6">
             <img class="pull-left" src="assets/img/andrew.jpg" alt="Andrew" />
@@ -212,19 +306,28 @@ if(!empty($_POST)) {
         </div>
       </footer>
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    function formSubmitted() {
+      $(".ss-form").hide();
+      $("#thanks").show();
+    }
+    jQuery(document).ready(function($) {
+      $("#hidden_iframe").load(function() {
+        formSubmitted();
+      });
+    });
+  </script>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-38376204-5']);
-  _gaq.push(['_trackPageview']);
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38376204-5']);
+    _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
   </body>
 </html>
