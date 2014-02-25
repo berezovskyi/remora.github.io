@@ -395,7 +395,7 @@ if(!empty($_POST)) {
         <hr>
 
         <!-- Team -->
-        <div id="team" class="row-fluid inner-page team color-4">
+        <!-- <div id="team" class="row-fluid inner-page team color-4">
           <h2 class="page-headline">remora was founded out of our own desire for a more flexible workspace</h2>
           <div class="span6">
             <img class="pull-left" src="assets/img/andrew.jpg" alt="Andrew" />
@@ -436,6 +436,13 @@ if(!empty($_POST)) {
             <ul>
               <li><a href="shaunmu@kth.se"><i class="icon-envelope-alt"></i>&nbsp;shaunmu@kth.se</a></li>
             </ul>
+          </div>
+        </div> -->
+        <div class="row-fluid inner-page">
+          <div class="span6 team2">
+            <p>
+              <a href="index.html" class="btn color-2">&larr; Back</a>
+            </p>
           </div>
         </div>
       </div>
@@ -501,7 +508,8 @@ if(!empty($_POST)) {
     }
     jQuery(document).ready(function($) {
       $("#hidden_iframe").load(function() {
-        formSubmitted();
+        $(".ss-form").hide();
+        $("#thanks").show();
       });
     });
   </script>

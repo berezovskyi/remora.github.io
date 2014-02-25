@@ -11357,9 +11357,16 @@ html {
   color: rgb(51, 51, 51);
 }
 
-
-
 .ss-password-warning, .error-message, .required-message {
   display: none;
   visibility: hidden;
 }
+
+#mail_form {
+  display: none;
+}
+
+#survey {
+  display: none;
+}
+
