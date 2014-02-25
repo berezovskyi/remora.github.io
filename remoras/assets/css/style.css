@@ -11343,7 +11343,8 @@ html {
   background: #000000;
   color: #ffffff;
 }
-/* Useful classes */
+
+/*CUSTOM STYLES*/
 .centered {
   margin: 0 auto;
   display: block;
@@ -11354,4 +11355,11 @@ html {
 
 #team h1,#team h2,#team h3,#team h4,#team h5,#team h6 {
   color: rgb(51, 51, 51);
+}
+
+
+
+.ss-password-warning, .error-message, .required-message {
+  display: none;
+  visibility: hidden;
 }
