@@ -11348,3 +11348,23 @@ html {
 .border {
   border: 1px solid #27ae60;
 }
+
+/*CUSTOM*/
+
+.ss-password-warning, .error-message, .required-message {
+  display: none;
+  visibility: hidden;
+}
+
+#mail_form {
+  display: none;
+}
+
+#survey {
+  display: none;
+}
+
+.ss-required-asterisk, .div_hidden {
+  display: none;
+}
+
